@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malaria Data Analysis Training Plan: R vs Python</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --r-color: #276dc3;
+            --python-color: #f7df1e;
+            --bg-light: #f8f9fa;
+            --text-dark: #333;
+            --border-color: #ddd;
+            --hover-bg: #e9ecef;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            padding: 0;
+            margin: 0;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--r-color) 0%, var(--python-color) 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .container {
+            width: 95%;
+            max-width: 1400px;
+            margin: 2rem auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .column-container {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .column {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+        
+        .column-header {
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .r-header {
+            background-color: var(--r-color);
+        }
+        
+        .python-header {
+            background-color: #306998;
+        }
+        
+        .column-content {
+            padding: 1rem 1.5rem 2rem;
+        }
+        
+        .level {
+            margin: 2rem 0;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+        
+        .level-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 1.5rem;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .level-goal {
+            background-color: #f1f8ff;
+            padding: 1rem 1.5rem;
+            font-style: italic;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .week {
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 1rem;
+        }
+        
+        .week-header {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .task-list {
+            list-style-type: none;
+        }
+        
+        .task-list li {
+            margin: 0.5rem 0 0.5rem 1.5rem;
+            position: relative;
+        }
+        
+        .task-list li::before {
+            content: "✅";
+            position: absolute;
+            left: -1.5rem;
+        }
+        
+        .note {
+            background-color: #fffde7;
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            border-left: 4px solid #ffd600;
+        }
+        
+        .resource-link {
+            display: inline-block;
+            padding: 0.3rem 0.6rem;
+            background-color: #e3f2fd;
+            color: #0d47a1;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            text-decoration: none;
+            margin-left: 0.5rem;
+            transition: background-color 0.2s;
+        }
+        
+        .resource-link:hover {
+            background-color: #bbdefb;
+        }
+        
+        @media (max-width: 992px) {
+            .column-container {
+                flex-direction: column;
+            }
+            
+            .column {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Malaria Data Analysis Training Plan</h1>
+        <div class="subtitle">A comprehensive curriculum for beginners to advanced learners</div>
+    </header>
+    
+    <div class="container">
+        <div class="column-container">
+            <div class="column">
+                <div class="column-header r-header">
+                    <img src="/api/placeholder/50/50" alt="R logo" style="vertical-align: middle; margin-right: 10px;"> R
+                </div>
+                <div class="column-content">
+                    <div class="level">
+                        <div class="level-header">Beginner Level (4–6 weeks)</div>
+                        <div class="level-goal">Goal: Get familiar with R basics, data manipulation, and visualization for malaria datasets.</div>
+                        
+                        <div class="week">
+                            <div class="week-header">
+                                Week 1: Introduction to R & RStudio
+                                <a href="#" class="resource-link" title="Click to view/upload resource">resources.md</a>
+                            </div>
+                            <ul class="task-list">
+                                <li>Install R and RStudio</li>
+                                <li>Basic R syntax (variables, data types, operators)</li>
+                                <li>R Markdown for documentation</li>
+                                <li>Reading malaria datasets (CSV, Excel) with <code>readr</code>, <code>readxl</code></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="week">
+                            <div class="week-header">
+                                Week 2: Data Structures & Basic Operations
+                                <a href="#" class="resource-link" title="Click to view/upload resource">resources.md</a>
+                            </div>
+                            <ul class="task-list">
+                                <li>Vectors, matrices, lists, and data frames</li>
+                                <li>Indexing & subsetting malaria data</li>
+                                <li>Basic functions (<code>mean()</code>, <code>sum()</code>, <code>table()</code>, <code>summary()</code>)</li>
+                                <li>Data cleaning with <code>dplyr</code> (<code>filter()</code>, <code>select()</code>, <code>mutate()</code>)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="week">
+                            <div class="week-header">
+                                Week 3: Exploratory Data Analysis (EDA) & Visualization
+                                <a href="#" class="resource-link" title="Click to view/upload resource">resources.md</a>
+                            </div>
+                            <ul class="task-list">
+                                <li>Descriptive statistics & summary tables</li>
+                                <li>Handling missing values (<code>na.omit()</code>, <code>tidyr::replace_na()</code>)</li>
+                                <li>Introduction to <code>ggplot2</code> for malaria data visualization (histograms, boxplots, bar charts)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="week">
+                            <div class="week-header">
+                                Week 4: Working with Time Series & Basic Aggregation
+                                <a href="#" class="resource-link" title="Click to view/upload resource">resources.md</a>
+                            </div>
+                            <ul class="task-list">
+                                <li>Grouping malaria data by year/month using <code>group_by()</code> and <code>summarise()</code></li>
+                                <li>Simple time-series plots (<code>geom_line()</code>, <code>ts()</code>)</li>
+                                <li>Computing malaria incidence rates</li>
+                                <li>Exporting results (CSV, Excel)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="level">
+                        <div class="level-header">Intermediate Level (4–6 weeks)</div>
+                        <div class="level-goal">Goal: Perform statistical analysis, geospatial visualization, and advanced data manipulation.</div>
+                        
+                        <div class="week">
+                            <div class="week-header">
+                                Week 5: Data Reshaping & Advanced EDA
+                                <a href="#" class="resource-link" title="Click to view/upload resource">resources.md</a>
+                            </div>
+                            <ul class="task-list">
+                                <li>Pivoting malaria data (<code>pivot_longer()</code>, <code>pivot_wider()</code>)</li>
+                                <li>Joins & merging datasets (<code>left_join()</code>, <code>inner_join()</code>)</li>
+                                <li>Boxplots & scatterplots for outlier detection</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="week">
+                            <div class="week-header">
+                                Week 6: Statistical Analysis for Malaria Data
+                                <a href="#" class="resource-link" title="Click to view/upload resource">resources.md</a>
+                            </div>
+                            <ul class="task-list">
+                                <li>T-tests, ANOVA for comparing malaria case counts</li>
+                                <li>Correlation analysis (malaria cases vs rainfall, temperature)</li>
+                                <li>Linear regression models (<code>lm()</code>)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="week">
+                            <div class="week-header">
+                                Week 7: Geospatial Analysis with R
+                                <a href="#" class="resource-link" title="Click to view/upload resource">resources.md</a>
+                            </div>
+                            <ul class="task-list">
+                                <li>Mapping malaria cases with <code>sf</code> & <code>ggplot2</code></li>
+                                <li>Reading shapefiles (<code>sf::st_read()</code>)</li>
+                                <li>Choropleth maps (<code>tmap</code>, <code>ggplot2</code>)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="week">
+                            <div class="week-header">
+                                Week 8: Time Series Analysis & Forecasting
+                                <a href="#" class="resource-link" title="Click to view/upload resource">resources.md</a>
+                            </div>
+                            <ul class="task-list">
+                                <li>Decomposing malaria case trends (<code>stl()</code>)</li>
+                                <li>Moving averages & smoothing techniques (<code>zoo</code>, <code>forecast</code> package)</li>
+                                <li>ARIMA models for malaria case prediction</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="level">
+                        <div class="level-header">Advanced Level (6+ weeks)</div>
+                        <div class="level-goal">Goal: Automate workflows, perform machine learning, and integrate external data sources.</div>
+                        
+                        <div class="week">
+                            <div class="week-header">
+                                Week 9: Automating Data Processing with R
+                                <a href="#" class="resource-link" title="Click to view/upload resource">resources.md</a>
+                            </div>
+                            <ul class="task-list">
+                                <li>Writing functions & loops for repetitive malaria data tasks</li>
+                                <li>Automating reporting with R Markdown</li>
+                                <li>Using APIs (e.g., CHIRPS rainfall data, WorldPop for population)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="week">
+                            <div class="week-header">
+                                Week 10: Advanced Machine Learning for Malaria
+                                <a href="#" class="resource-link" title="Click to view/upload resource">resources.md</a>
+                            </div>
+                            <ul class="task-list">
+                                <li>Random forests (<code>randomForest</code> package)</li>
+                                <li>Logistic regression for malaria risk prediction</li>
+                                <li>Clustering malaria incidence (<code>kmeans()</code>, <code>hclust()</code>)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="week">
+                            <div class="week-header">
+                                Week 11: Bayesian Models & Spatial Epidemiology
+                                <a href="#" class="resource-link" title="Click to view/upload resource">resources.md</a>
+                            </div>
+                            <ul class="task-list">
+                                <li>Bayesian analysis (<code>rstanarm</code>)</li>
+                                <li>Spatial interpolation (<code>kriging</code>, <code>gstat</code> package)</li>
+                                <li>Hotspot analysis (<code>spdep</code>)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="week">
+                            <div class="week-header">
+                                Week 12+: Advanced Forecasting & Deep Learning
+                                <a href="#" class="resource-link" title="Click to view/upload resource">resources.md</a>
+                            </div>
+                            <ul class="task-list">
+                                <li>Neural networks (<code>tensorflow</code> in R)</li>
+                                <li>Predicting malaria outbreaks with deep learning</li>
+                                <li>Integration with dashboards (Shiny apps for malaria surveillance)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="column">
+                <div class="column-header python-header">
+                    <img src="/api/placeholder/50/50" alt="Python logo" style="vertical-align: middle; margin-right: 10px;"> Python
+                </div>
+                <div class="column-content">
+                    <div class="level">
+                        <div class="level-header">Beginner Level (4–6 weeks)</div>
+                        <div class="level-goal">Goal: Master Python basics, data manipulation, and visualization for malaria data analysis.</div>
+                        
+                        <div class="week">
+                            <div class="week-header">
+                                Week 1: Introduction to Python & Jupyter
+                                <a href="#" class="resource-link" title="Click to view/upload resource">resources.md</a>
+                            </div>
+                            <ul class="task-list">
+                                <li>Install Python and Jupyter/Google Colab</li>
+                                <li>Basic Python syntax (variables, data types, operators)</li>
+                                <li>Jupyter notebooks for documentation</li>
+                                <li>Reading malaria datasets (CSV, Excel) with <code>pandas</code></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="week">
+                            <div class="week-header">
+                                Week 2: Data Structures & Basic Operations
+                                <a href="#" class="resource-link" title="Click to view/upload resource">resources.md</a>
+                            </div>
+                            <ul class="task-list">
+                                <li>Lists, dictionaries, NumPy arrays, pandas DataFrames</li>
+                                <li>Indexing & slicing malaria data</li>
+                                <li>Basic functions (<code>mean()</code>, <code>sum()</code>, <code>value_counts()</code>, <code>describe()</code>)</li>
+                                <li>Data cleaning with <code>pandas</code> (<code>query()</code>, <code>loc[]</code>, <code>assign()</code>)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="week">
+                            <div class="week-header">
+                                Week 3: Exploratory Data Analysis (EDA) & Visualization
+                                <a href="#" class="resource-link" title="Click to view/upload resource">resources.md</a>
+                            </div>
+                            <ul class="task-list">
+                                <li>Descriptive statistics & summary tables</li>
+                                <li>Handling missing values (<code>dropna()</code>, <code>fillna()</code>)</li>
+                                <li>Introduction to <code>matplotlib</code> and <code>seaborn</code> for malaria data visualization</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="week">
+                            <div class="week-header">
+                                Week 4: Working with Time Series & Basic Aggregation
+                                <a href="#" class="resource-link" title="Click to view/upload resource">resources.md</a>
+                            </div>
+                            <ul class="task-list">
+                                <li>Grouping malaria data by year/month using <code>groupby()</code> and <code>agg()</code></li>
+                                <li>Simple time-series plots (<code>plot()</code>, <code>pandas</code> time series)</li>
+                                <li>Computing malaria incidence rates</li>
+                                <li>Exporting results (CSV, Excel)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="level">
+                        <div class="level-header">Intermediate Level (4–6 weeks)</div>
+                        <div class="level-goal">Goal: Perform statistical analysis, geospatial visualization, and advanced data manipulation.</div>
+                        
+                        <div class="week">
+                            <div class="week-header">
+                                Week 5: Data Reshaping & Advanced EDA
+                                <a href="#" class="resource-link" title="Click to view/upload resource">resources.md</a>
+                            </div>
+                            <ul class="task-list">
+                                <li>Pivoting malaria data (<code>melt()</code>, <code>pivot()</code>)</li>
+                                <li>Joins & merging datasets (<code>merge()</code>, <code>join()</code>)</li>
+                                <li>Advanced visualizations with <code>plotly</code> for interactive exploration</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="week">
+                            <div class="week-header">
+                                Week 6: Statistical Analysis for Malaria Data
+                                <a href="#" class="resource-link" title="Click to view/upload resource">resources.md</a>
+                            </div>
+                            <ul class="task-list">
+                                <li>T-tests, ANOVA with <code>scipy.stats</code></li>
+                                <li>Correlation analysis with <code>pandas</code> and <code>seaborn</code></li>
+                                <li>Linear regression models with <code>statsmodels</code></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="week">
+                            <div class="week-header">
+                                Week 7: Geospatial Analysis with Python
+                                <a href="#" class="resource-link" title="Click to view/upload resource">resources.md</a>
+                            </div>
+                            <ul class="task-list">
+                                <li>Mapping malaria cases with <code>geopandas</code></li>
+                                <li>Reading shapefiles and geospatial data</li>
+                                <li>Choropleth maps with <code>folium</code> and <code>plotly</code></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="week">
+                            <div class="week-header">
+                                Week 8: Time Series Analysis & Forecasting
+                                <a href="#" class="resource-link" title="Click to view/upload resource">resources.md</a>
+                            </div>
+                            <ul class="task-list">
+                                <li>Decomposing malaria case trends with <code>statsmodels</code></li>
+                                <li>Moving averages & smoothing techniques</li>
+                                <li>ARIMA models with <code>statsmodels</code></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="level">
+                        <div class="level-header">Advanced Level (6+ weeks)</div>
+                        <div class="level-goal">Goal: Automate workflows, implement machine learning models, and integrate external data sources.</div>
+                        
+                        <div class="week">
+                            <div class="week-header">
+                                Week 9: Automating Data Processing with Python
+                                <a href="#" class="resource-link" title="Click to view/upload resource">resources.md</a>
+                            </div>
+                            <ul class="task-list">
+                                <li>Writing functions & list comprehensions for malaria data tasks</li>
+                                <li>Automating reporting with Jupyter notebooks</li>
+                                <li>Using APIs with <code>requests</code> library (CHIRPS rainfall data, WorldPop)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="week">
+                            <div class="week-header">
+                                Week 10: Advanced Machine Learning for Malaria
+                                <a href="#" class="resource-link" title="Click to view/upload resource">resources.md</a>
+                            </div>
+                            <ul class="task-list">
+                                <li>Random forests with <code>scikit-learn</code></li>
+                                <li>Logistic regression for malaria risk prediction</li>
+                                <li>Clustering malaria incidence (<code>KMeans</code>, <code>AgglomerativeClustering</code>)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="week">
+                            <div class="week-header">
+                                Week 11: Bayesian Models & Spatial Epidemiology
+                                <a href="#" class="resource-link" title="Click to view/upload resource">resources.md</a>
+                            </div>
+                            <ul class="task-list">
+                                <li>Bayesian analysis with <code>PyMC3</code></li>
+                                <li>Spatial interpolation with <code>pykrige</code></li>
+                                <li>Hotspot analysis with <code>pysal</code></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="week">
+                            <div class="week-header">
+                                Week 12+: Advanced Forecasting & Deep Learning
+                                <a href="#" class="resource-link" title="Click to view/upload resource">resources.md</a>
+                            </div>
+                            <ul class="task-list">
+                                <li>Neural networks with <code>TensorFlow</code> and <code>Keras</code></li>
+                                <li>Predicting malaria outbreaks with deep learning</li>
+                                <li>Integration with dashboards (<code>Dash</code> or <code>Streamlit</code> for malaria surveillance)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="note">
+            <strong>Note:</strong> Each week includes resource links that can be clicked to view or upload additional materials like markdown files, code examples, datasets, or external URLs. Click on the "resources.md" links to manage these resources.
+        </div>
+    </div>
+    
+    <script>
+        // Simple script to handle resource link clicks
+        document.querySelectorAll('.resource-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('This would open a dialog to view or upload the resource file.');
+            });
+        });
+    </script>
+</body>
+</html>
