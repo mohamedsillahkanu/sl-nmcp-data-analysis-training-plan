@@ -205,7 +205,7 @@
                         <div class="week">
                             <div class="week-header">
                                 Week 1: Introduction to R & RStudio
-                                <a href="https://mohamedsillahkanu.github.io/R_WK1_Note/" class="resource-link" title="Click to view notes">Notes</a>
+                                <a href="https://mohamedsillahkanu.github.io/R_WK1_Note/" class="resource-link" target="_blank">Open Resource</a>
                             </div>
                             <ul class="task-list">
                                 <li>Install R and RStudio</li>
@@ -541,14 +541,17 @@
         </div>
     </div>
     
+   
+    </script>
     <script>
-        // Simple script to handle resource link clicks
         document.querySelectorAll('.resource-link').forEach(link => {
             link.addEventListener('click', function(e) {
-                e.preventDefault();
-                alert('This would open a dialog to view or upload the resource file.');
+                window.open(this.href, '_blank'); // Opens the link in a new tab
             });
         });
     </script>
+
+
+    
 </body>
 </html>
