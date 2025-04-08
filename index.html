@@ -727,14 +727,16 @@
     </div>
     
    
-    </script>
+   
     <script>
-        document.querySelectorAll('.resource-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                window.open(this.href, '_blank'); // Opens the link in a new tab
-            });
+    document.querySelectorAll('.resource-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent the default behavior
+            window.location.href = this.href; // Open link in same tab
         });
-    </script>
+    });
+</script>
+
 
 
     
